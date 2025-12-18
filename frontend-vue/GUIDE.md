@@ -1,4 +1,4 @@
-# Vue + AI 全栈学习指南 (GUIDE.md)
+# Vue + AI 前端学习指南 (GUIDE.md)
 
 > **👤 学习者导航**: 这是你的核心教材，从零基础 HTML 到 AI 结对编程的完整路径。
 > **🤖 AI 导航**: 这是你的教学大纲。请按章节顺序引导学习，**不要跳跃**。
@@ -200,11 +200,11 @@ Vue 是一个渐进式框架，它帮你把 HTML/CSS/JS 组合成可复用的**�
 | 类别 | 工具 | 说明 |
 | :--- | :--- | :--- |
 | **IDE** | **Cursor** / Windsurf | AI-Native 编辑器，内置 Chat 和 Composer。 |
-| **Framework** | **Vue 3.6+** | 使用 `<script setup>`，准备迎接 Vapor Mode。 |
-| **Build** | **Vite 7** | 基于 Rolldown 的极速构建。 |
-| **State** | **Pinia 3** | 官方状态管理，Setup Store 风格。 |
-| **Styling** | **Tailwind CSS v4** | Utility-First，零运行时。 |
-| **Language** | **TypeScript 5.8+** | 严格类型，Type-First。 |
+| **Framework** | **Vue 3（优先最新稳定版）** | 默认使用 `<script setup>`；涉及实验/预览特性时先以官方文档确认。 |
+| **Build** | **Vite（优先最新稳定版）** | 以官方推荐配置为准；如回答基于特定版本会提前声明。 |
+| **State** | **Pinia（优先最新稳定版）** | 推荐 Setup Store 风格；如项目未使用 Pinia 会给替代方案。 |
+| **Styling** | **Tailwind CSS（可选）** | 优先遵循项目现有样式方案；必要时提供原生 CSS 版本。 |
+| **Language** | **TypeScript（优先最新稳定版）** | Type-First；必要时说明 `tsconfig` 假设（如 `strict`）。 |
 
 ---
 
