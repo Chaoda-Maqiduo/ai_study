@@ -8,16 +8,25 @@
 **Explanation Given**: 重新设计了 `GUIDE.md`，将 JS 拆分为 5 个子模块，HTML/CSS 补充了表单和响应式等细节；更新了根目录 `README.md` 增加了教学深度约束。
 **Understanding Level**: High (用户主动提出重构建议，体现了极强的架构意识)。
 
-### Question 2: JavaScript 基础类型 (3.1)
-**Student's Question**: 探讨变量定义及 "true" 字符串与 Boolean 的区别。
-**Initial Understanding**: 理解了数字与字符串的区别，并敏锐觉察到前端引号对逻辑判断的影响。
-**Explanation Given**: 解释了 JS 的 Truthy/Falsy 陷阱以及与后端数据对齐的重要性。
-**Understanding Level**: Medium (已建立基础心智模型，待进一步实战验证)。
+### Question 4: 脚本阻塞与渲染性能 (1.4)
+**Student's Question**: 探讨 Head 中大文件脚本对页面的影响。
+**Initial Understanding**: 准确指出会导致“白屏”现象。
+**Explanation Given**: 解释了浏览器顺序解析机制、渲染阻塞以及现代处理方案（defer/async）。
+**Understanding Level**: High.
 
 ## 2. 总结与计划
 **Knowledge Gaps Identified**:
-- JS 数组方法（filter/map）的链式调用还不够熟练。
-- 对 Object 嵌套属性的访问路径（Property Access）需要练习。
+- 尚未进行复杂的 Grid 布局练习。
+- 需要在后续 JS 学习中实践 Fetch API 以替代表单默认提交。
+
+**Topics Mastered Today**:
+- HTML 完整体系 (Chapter 01 Complete)。
+- 表单交互与路径陷阱。
+- 浏览器加载优化基础。
+
+**Action Items for Next Session**:
+- 开启第二章遗留部分：2.4 Grid 二维布局实战。
+- 继续 3.1 模块：完成 Object 和 Array 的深入练习。
 
 **Topics Mastered Today**:
 - 课程体系重构 (Architecture Pacing)。
