@@ -51,15 +51,60 @@
 - **Comprehension Checks**: -
 - **Understanding Level**: Medium
 
+### Practice 1: 以掘金文章页做语义骨架
+- **Task**: 以“掘金文章页”为例，拆分站点级结构与文章级结构，并补齐“互动区”与 `div vs section` 判定。
+- **Student's Answer**:
+  - 顶部整站栏：`header`；主导航：`header > nav`
+  - 页面主体：`main`
+  - 正文：`article`
+  - 评论区：`article` 内的 `section`
+  - 右侧栏：`main` 内的 `aside`
+  - 底部整站信息：`footer`
+  - 互动区：更像 `article` 的补充（针对这篇文章的操作），交互入口用 `button`
+- **Clarifications**:
+  - `nav` 只包导航链接区域；搜索/登录等入口不一定属于 `nav`
+  - “互动区”容器可用 `section aria-label="文章互动"`（明确可命名的功能区）；如果只是为布局/包裹/样式钩子则用 `div`
+  - `div vs section` 最小判定：`section = 可命名的主题/功能区`；`div = 纯布局/包裹/样式钩子`
+- **Mini Quiz (Result)**:
+  - 两列布局包裹（article + aside）：`div` ✅
+  - “相关推荐”模块：`section` ✅
+  - 仅为背景/间距包一层：`div` ✅
+
+### Practice 2: 标题层级、目录与交互控件语义
+- **Task**: 用“水果文章”练习 `h1/h2/h3`、文章目录（`nav`）与交互控件（`button/a`）的语义选择。
+- **Key Takeaways**:
+  - 目录（文章内锚点跳转）用 `nav`，不局限于 `header`；侧栏目录可用 `aside > nav`
+  - `h1` 通常为文章标题；`h2` 为一级分区；`h3` 为某个 `h2` 的子分区
+  - `nav` 提供跳转链接，正文用对应 `id` 的 `h2/h3` 作为目标点
+  - `button` 用于触发动作（点赞/打开弹窗/复制），`a` 用于地址跳转（去分享页等）
+- **ARIA Quick Notes**:
+  - `aria-haspopup="dialog"`：按钮会弹出对话框
+  - `aria-controls="id"`：按钮控制的目标元素
+  - `aria-expanded="true/false"`：展开/打开状态（如弹窗是否打开）
+  - `role="dialog" aria-modal="true"`：声明模态对话框
+  - `aria-labelledby="id"`：用标题元素为弹窗命名（优于只用 `aria-label`）
+
 ## 2. 知识盲区 (Knowledge Gaps)
 - [ ] 区分“语义（结构含义）” vs “行为（脚本/交互）”
 - [ ] 能举例并正确使用常见语义化标签（`header/main/nav/article/section/aside/footer`）
 - [ ] 不以“数据来源（后端/静态）”作为语义化依据，而以“内容角色/主次关系”来划分
+- [ ] 能在真实页面中为 `section` 补齐“可命名依据”（标题或 `aria-label`），避免滥用 `section`
+- [ ] 理解“文章级 `header`”与“站点级 `header`”的区别（同名标签但语义范围不同）
+- [ ] 理解表单可访问性最小集：`label`、`type="submit"`、错误提示关联（`aria-describedby`）
+- [ ] 掌握内容语义标签：`time`、`figure/figcaption`、`code/pre`、`blockquote`、`strong/em` 的使用场景
+- [ ] 掌握列表/定义列表的选择：`ul/ol/li` vs `dl/dt/dd`
+- [ ] 掌握图片与媒体：`img`（`alt`）、`video`（基础属性）与何时用它们
 
 ## 3. 今日掌握 (Topics Mastered)
 - 区分语义（结构含义）与行为（脚本/交互）（Confidence: Medium）
 - 能将博客文章页拆成 `header/main/article/aside`，并将评论区放在 `article` 内的 `section`（Confidence: Medium）
 - 能区分站点级导航（`nav`）与文章相关辅助内容（`aside`）（Confidence: High）
+- 能用掘金文章页给出语义骨架，并把互动区归为文章级内容：入口用 `button`，容器按“可命名”选择 `section/div`（Confidence: Medium）
+- 已形成 `div vs section` 的最小判定规则：`section = 可命名主题/功能区`；`div = 纯布局/包裹/样式钩子`（Confidence: Medium）
+- 理解 `button` vs `a` 的语义边界，并能用最小 ARIA 描述“按钮打开弹窗”的关系与状态（Confidence: Medium）
+- 已覆盖标签清单（本章已学/已用）：`header/nav/main/article/section/aside/footer`、`h1/h2/h3`、`div`、`a`、`button`、`form`、`label`、`input`、`textarea`、`ul/li`、`p`（Confidence: Medium）
 
 ## 4. 下次预告 (Action Items)
-- [ ] 完成第 01 章：能把页面拆成语义结构，并写出骨架 HTML
+- [ ] 完成第 01 章：独立写出“掘金文章页”骨架 HTML（含文章级 `header`、互动区、评论区、右侧栏）
+- [ ] 练习：把 10 个常见模块分别判断 `div`/`section`，并为每个 `section` 写出标题或 `aria-label`
+- [ ] 练习：为“评论表单”补齐最小可访问性（`label`、必填/错误提示、提交按钮语义）
